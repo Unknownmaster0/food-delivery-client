@@ -43,9 +43,9 @@ export default function Footer() {
           <div>
             <h4 className="mb-4 text-md font-bold text-gray-900 dark:text-gray-100">Contact Us</h4>
             <address className="not-italic">
-              <p className="mb-2 text-sm text-gray-600 dark:text-gray-400">123 Food Street</p>
-              <p className="mb-2 text-sm text-gray-600 dark:text-gray-400">Foodville, FD 12345</p>
-              <p className="text-sm text-gray-600 dark:text-gray-400">Phone: (123) 456-7890</p>
+              <p className="mb-2 text-sm text-gray-600 dark:text-gray-400">Park street</p>
+              <p className="mb-2 text-sm text-gray-600 dark:text-gray-400">Kolkata, India</p>
+              <p className="text-sm text-gray-600 dark:text-gray-400">Phone: +91 1234 567890</p>
             </address>
           </div>
         </div>
