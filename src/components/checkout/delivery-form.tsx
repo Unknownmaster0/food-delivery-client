@@ -1,11 +1,15 @@
-"use client"
+"use client";
 
-import type React from "react"
+import type React from "react";
 
-import { useState } from "react"
-import { Input } from "@/components/ui/input"
+import { useState } from "react";
+import { Input } from "@/components/ui/input";
 
-export default function DeliveryForm() {
+interface DeliveryFormProps {
+  setIsFormFilled: (isFormFilled: boolean) => void;
+}
+
+export default function DeliveryForm({ setIsFormFilled }: DeliveryFormProps) {
   const [formData, setFormData] = useState({
     name: "",
     address: "",
@@ -13,27 +17,45 @@ export default function DeliveryForm() {
     zipCode: "",
     phone: "",
     instructions: "",
-  })
+  });
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value } = e.target
-    setFormData((prev) => ({ ...prev, [name]: value }))
-  }
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
+    setIsFormFilled(true);
+  };
 
   return (
     <div className="rounded-lg border border-gray-200 bg-white p-6 dark:border-gray-700 dark:bg-gray-800">
-      <h2 className="mb-4 text-lg font-bold text-gray-900 dark:text-gray-100">Delivery Information</h2>
+      <h2 className="mb-4 text-lg font-bold text-gray-900 dark:text-gray-100">
+        Delivery Information
+      </h2>
 
       <div className="grid gap-4">
         <div>
-          <label htmlFor="name" className="mb-1 block text-sm font-medium text-gray-700 dark:text-gray-300">
+          <label
+            htmlFor="name"
+            className="mb-1 block text-sm font-medium text-gray-700 dark:text-gray-300"
+          >
             Full Name
           </label>
-          <Input id="name" name="name" value={formData.name} onChange={handleChange} placeholder="John Doe" required />
+          <Input
+            id="name"
+            name="name"
+            value={formData.name}
+            onChange={handleChange}
+            placeholder="John Doe"
+            required
+          />
         </div>
 
         <div>
-          <label htmlFor="address" className="mb-1 block text-sm font-medium text-gray-700 dark:text-gray-300">
+          <label
+            htmlFor="address"
+            className="mb-1 block text-sm font-medium text-gray-700 dark:text-gray-300"
+          >
             Address
           </label>
           <Input
@@ -48,7 +70,10 @@ export default function DeliveryForm() {
 
         <div className="grid grid-cols-2 gap-4">
           <div>
-            <label htmlFor="city" className="mb-1 block text-sm font-medium text-gray-700 dark:text-gray-300">
+            <label
+              htmlFor="city"
+              className="mb-1 block text-sm font-medium text-gray-700 dark:text-gray-300"
+            >
               City
             </label>
             <Input
@@ -62,7 +87,10 @@ export default function DeliveryForm() {
           </div>
 
           <div>
-            <label htmlFor="zipCode" className="mb-1 block text-sm font-medium text-gray-700 dark:text-gray-300">
+            <label
+              htmlFor="zipCode"
+              className="mb-1 block text-sm font-medium text-gray-700 dark:text-gray-300"
+            >
               ZIP Code
             </label>
             <Input
@@ -77,7 +105,10 @@ export default function DeliveryForm() {
         </div>
 
         <div>
-          <label htmlFor="phone" className="mb-1 block text-sm font-medium text-gray-700 dark:text-gray-300">
+          <label
+            htmlFor="phone"
+            className="mb-1 block text-sm font-medium text-gray-700 dark:text-gray-300"
+          >
             Phone Number
           </label>
           <Input
@@ -91,7 +122,10 @@ export default function DeliveryForm() {
         </div>
 
         <div>
-          <label htmlFor="instructions" className="mb-1 block text-sm font-medium text-gray-700 dark:text-gray-300">
+          <label
+            htmlFor="instructions"
+            className="mb-1 block text-sm font-medium text-gray-700 dark:text-gray-300"
+          >
             Delivery Instructions (Optional)
           </label>
           <textarea
@@ -106,5 +140,5 @@ export default function DeliveryForm() {
         </div>
       </div>
     </div>
-  )
+  );
 }

@@ -1,34 +1,40 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import { useRouter } from "next/navigation"
-import { useCart } from "@/lib/cart-context"
-import DeliveryForm from "@/components/checkout/delivery-form"
-import OrderSummary from "@/components/checkout/order-summary"
-import { Button } from "@/components/ui/button"
-import { Check } from "lucide-react"
+import { useState } from "react";
+import { useRouter } from "next/navigation";
+import { useCart } from "@/lib/cart-context";
+import DeliveryForm from "@/components/checkout/delivery-form";
+import OrderSummary from "@/components/checkout/order-summary";
+import { Button } from "@/components/ui/button";
+import { Check } from "lucide-react";
+import Toast from "@/lib/toast";
 
 export default function CheckoutPage() {
-  const router = useRouter()
-  const { cart, totalPrice, clearCart } = useCart()
-  const [isSubmitting, setIsSubmitting] = useState(false)
-  const [isOrderPlaced, setIsOrderPlaced] = useState(false)
+  const router = useRouter();
+  const { cart, totalPrice, clearCart } = useCart();
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isOrderPlaced, setIsOrderPlaced] = useState(false);
+  const [isFormFilled, setIsFormFilled] = useState(false);
 
   if (cart.length === 0 && !isOrderPlaced) {
-    router.push("/menu")
-    return null
+    router.push("/menu");
+    return null;
   }
 
   const handlePlaceOrder = () => {
-    setIsSubmitting(true)
+    if (!isFormFilled) {
+      Toast("error", "Please fill in the delivery details", "");
+    } else {
+      setIsSubmitting(true);
 
-    // Simulate order processing
-    setTimeout(() => {
-      setIsSubmitting(false)
-      setIsOrderPlaced(true)
-      clearCart()
-    }, 1500)
-  }
+      // Simulate order processing
+      setTimeout(() => {
+        setIsSubmitting(false);
+        setIsOrderPlaced(true);
+        clearCart();
+      }, 1500);
+    }
+  };
 
   if (isOrderPlaced) {
     return (
@@ -37,10 +43,12 @@ export default function CheckoutPage() {
           <Check className="h-10 w-10 text-green-600" />
         </div>
         <h1 className="mb-2">Order Placed Successfully!</h1>
-        <p className="mb-8 text-gray-500">Thank you for your order. Your food will be delivered soon.</p>
+        <p className="mb-8 text-gray-500">
+          Thank you for your order. Your food will be delivered soon.
+        </p>
         <Button onClick={() => router.push("/")}>Back to Home</Button>
       </div>
-    )
+    );
   }
 
   return (
@@ -49,13 +57,16 @@ export default function CheckoutPage() {
 
       <div className="grid gap-8 md:grid-cols-3">
         <div className="md:col-span-2">
-          <DeliveryForm />
+          <DeliveryForm setIsFormFilled={setIsFormFilled} />
         </div>
 
         <div>
-          <OrderSummary onPlaceOrder={handlePlaceOrder} isSubmitting={isSubmitting} />
+          <OrderSummary
+            onPlaceOrder={handlePlaceOrder}
+            isSubmitting={isSubmitting}
+          />
         </div>
       </div>
     </div>
-  )
+  );
 }
