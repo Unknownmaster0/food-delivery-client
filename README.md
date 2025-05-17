@@ -1,36 +1,55 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Food Delivery Client
+
+This project is a food delivery client built with Next.js, focusing on providing a seamless user experience for ordering food online.
 
 ## Getting Started
 
-First, run the development server:
+To run the project locally, follow these steps:
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+1.  Clone the repository:
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+    ```bash
+    git clone <https://github.com/Unknownmaster0/food-delivery-frontend.git>
+    cd food-delivery-client
+    ```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+2.  Install the dependencies:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+    ```bash
+    npm install
+    ```
 
-## Learn More
+3.  Start the development server:
 
-To learn more about Next.js, take a look at the following resources:
+    ```bash
+    npm run dev
+    ```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+4.  Open [http://localhost:3000](http://localhost:3000) in your browser to view the application.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Frontend Features
 
-## Deploy on Vercel
+*   **User-Friendly Interface:** Intuitive design for easy navigation and order placement.
+*   **Responsive Layout:** Adapts to different screen sizes for optimal viewing on desktops, tablets, and mobile devices.
+*   **Interactive Components:** Engaging elements to enhance user interaction.
+*   **Checkout Process:** Smooth and efficient checkout experience using the [`DeliveryForm`](src/components/checkout/delivery-form.tsx) and [`OrderSummary`](src/components/checkout/order-summary.tsx) components.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Libraries Used
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+*   **@radix-ui/react-\*:** For accessible UI components.
+*   **date-fns:** For date manipulation.
+*   **lucide-react:** For beautiful icons.
+*   **next-themes:** For theme management.
+*   **react-day-picker:** For date picker functionality.
+*   **sweetalert2:** For displaying alerts.
+
+## Tech Stack
+
+*   **Next.js:** React framework for building performant web applications.
+*   **React:** JavaScript library for building user interfaces.
+*   **Tailwind CSS:** Utility-first CSS framework for styling.
+*   **TypeScript:** Superset of JavaScript for type checking and improved code quality.
+
+## Deployment
+
+This project is deployed on [Vercel](https://food-delivery-client-b2r7.vercel.app/), providing a seamless deployment and hosting experience.
