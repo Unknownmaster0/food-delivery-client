@@ -1,7 +1,6 @@
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
 
-// hero-section banner at the home page
 export default function Banner() {
   return (
     <div className="relative mb-12 mt-6 overflow-hidden rounded-xl bg-gradient-to-r from-[#ff4500] to-[#ff7e54] p-6 text-white dark:from-[#ff5a1f] dark:to-[#ff8c66] md:p-8">

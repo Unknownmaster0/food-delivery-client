@@ -14,7 +14,6 @@ interface CartItemProps {
 export default function CartItem({ item }: CartItemProps) {
   const { updateQuantity, removeFromCart } = useCart()
 
-  // handle when item is added to the cart.
   const handleQuantityChange = (newQuantity: number) => {
     updateQuantity(item.id, newQuantity)
   }

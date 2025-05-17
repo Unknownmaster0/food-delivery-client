@@ -1,4 +1,4 @@
-import Link from "next/link";
+import Link from "next/link"
 
 export default function Footer() {
   return (
@@ -6,18 +6,12 @@ export default function Footer() {
       <div className="container mx-auto px-4 py-8">
         <div className="grid gap-8 md:grid-cols-3">
           <div>
-            <h3 className="mb-4 text-lg font-bold text-gray-900 dark:text-gray-100">
-              FoodDelivery
-            </h3>
-            <p className="text-sm text-gray-600 dark:text-gray-400">
-              Delicious food delivered to your doorstep.
-            </p>
+            <h3 className="mb-4 text-lg font-bold text-gray-900 dark:text-gray-100">FoodDelivery</h3>
+            <p className="text-sm text-gray-600 dark:text-gray-400">Delicious food delivered to your doorstep.</p>
           </div>
 
           <div>
-            <h4 className="mb-4 text-md font-bold text-gray-900 dark:text-gray-100">
-              Quick Links
-            </h4>
+            <h4 className="mb-4 text-md font-bold text-gray-900 dark:text-gray-100">Quick Links</h4>
             <ul className="space-y-2 text-sm">
               <li>
                 <Link
@@ -47,29 +41,19 @@ export default function Footer() {
           </div>
 
           <div>
-            <h4 className="mb-4 text-md font-bold text-gray-900 dark:text-gray-100">
-              Contact Us
-            </h4>
+            <h4 className="mb-4 text-md font-bold text-gray-900 dark:text-gray-100">Contact Us</h4>
             <address className="not-italic">
-              <p className="mb-2 text-sm text-gray-600 dark:text-gray-400">
-                xyz, street
-              </p>
-              <p className="mb-2 text-sm text-gray-600 dark:text-gray-400">
-                City, Country
-              </p>
-              <p className="text-sm text-gray-600 dark:text-gray-400">
-                Phone: 1234567890
-              </p>
+              <p className="mb-2 text-sm text-gray-600 dark:text-gray-400">123 Food Street</p>
+              <p className="mb-2 text-sm text-gray-600 dark:text-gray-400">Foodville, FD 12345</p>
+              <p className="text-sm text-gray-600 dark:text-gray-400">Phone: (123) 456-7890</p>
             </address>
           </div>
         </div>
 
         <div className="mt-8 border-t border-gray-200 pt-4 text-center text-sm text-gray-600 dark:border-gray-700 dark:text-gray-400">
-          <p>
-            &copy; {new Date().getFullYear()} FoodDelivery. All rights reserved.
-          </p>
+          <p>&copy; {new Date().getFullYear()} FoodDelivery. All rights reserved.</p>
         </div>
       </div>
     </footer>
-  );
+  )
 }

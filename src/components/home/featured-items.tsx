@@ -3,7 +3,6 @@ import { Button } from "@/components/ui/button"
 import MenuItem from "@/components/menu/menu-item"
 import { foodItems } from "@/lib/data"
 
-// the popular item list, which is marked as featured.
 export default function FeaturedItems() {
   // Get 4 featured items
   const featuredItems = foodItems.filter((item) => item.featured).slice(0, 4)

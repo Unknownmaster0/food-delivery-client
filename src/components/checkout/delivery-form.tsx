@@ -5,7 +5,6 @@ import type React from "react"
 import { useState } from "react"
 import { Input } from "@/components/ui/input"
 
-// form to fill the delivery details
 export default function DeliveryForm() {
   const [formData, setFormData] = useState({
     name: "",
@@ -16,7 +15,6 @@ export default function DeliveryForm() {
     instructions: "",
   })
 
-  // handle the change in the form
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target
     setFormData((prev) => ({ ...prev, [name]: value }))

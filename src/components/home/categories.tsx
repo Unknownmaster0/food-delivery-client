@@ -2,7 +2,6 @@ import Link from "next/link"
 import Image from "next/image"
 import { categories } from "@/lib/data"
 
-// list the categories of items
 export default function Categories() {
   return (
     <section className="mb-12">

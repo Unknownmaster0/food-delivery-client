@@ -34,6 +34,7 @@ export function CartProvider({ children }: { children: ReactNode }) {
     localStorage.setItem("cart", JSON.stringify(cart))
   }, [cart])
 
+  // CRUD APPLICATION WITH THE CART
   const addToCart = (item: CartItem) => {
     setCart((prevCart) => {
       const existingItemIndex = prevCart.findIndex((cartItem) => cartItem.id === item.id)

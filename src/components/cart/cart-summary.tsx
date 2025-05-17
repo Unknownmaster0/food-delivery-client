@@ -2,14 +2,12 @@ import { useCart } from "@/lib/cart-context"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
 
-// page that display the cart payment details
 export default function CartSummary() {
   const { totalPrice } = useCart()
 
   const deliveryFee = 2.99
   const subtotal = totalPrice
   const total = subtotal + deliveryFee
-
 
   return (
     <div className="rounded-lg border border-gray-200 bg-white p-4 dark:border-gray-700 dark:bg-gray-800">
