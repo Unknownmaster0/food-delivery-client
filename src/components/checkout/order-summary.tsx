@@ -2,7 +2,7 @@
 
 import { useCart } from "@/lib/cart-context"
 import { Button } from "@/components/ui/button"
-import { Loader2 } from "lucide-react"
+import { IndianRupee, Loader2 } from "lucide-react"
 
 interface OrderSummaryProps {
   onPlaceOrder: () => void
@@ -26,7 +26,7 @@ export default function OrderSummary({ onPlaceOrder, isSubmitting }: OrderSummar
             <span className="text-gray-700 dark:text-gray-300">
               {item.quantity} x {item.name}
             </span>
-            <span className="text-gray-900 dark:text-gray-100">${(item.price * item.quantity).toFixed(2)}</span>
+            <span className="text-gray-900 dark:text-gray-100"><IndianRupee className="inline h-4" />{(item.price * item.quantity).toFixed(2)}</span>
           </div>
         ))}
       </div>
@@ -34,18 +34,18 @@ export default function OrderSummary({ onPlaceOrder, isSubmitting }: OrderSummar
       <div className="space-y-2 border-t border-gray-200 pt-2 dark:border-gray-700">
         <div className="flex justify-between">
           <span className="text-gray-600 dark:text-gray-400">Subtotal</span>
-          <span className="text-gray-900 dark:text-gray-100">${subtotal.toFixed(2)}</span>
+          <span className="text-gray-900 dark:text-gray-100"><IndianRupee className="inline h-4" />{subtotal.toFixed(2)}</span>
         </div>
 
         <div className="flex justify-between">
           <span className="text-gray-600 dark:text-gray-400">Delivery Fee</span>
-          <span className="text-gray-900 dark:text-gray-100">${deliveryFee.toFixed(2)}</span>
+          <span className="text-gray-900 dark:text-gray-100"><IndianRupee className="inline h-4" />{deliveryFee.toFixed(2)}</span>
         </div>
 
         <div className="border-t border-gray-200 pt-2 dark:border-gray-700">
           <div className="flex justify-between font-bold">
             <span className="text-gray-900 dark:text-gray-100">Total</span>
-            <span className="text-gray-900 dark:text-gray-100">${total.toFixed(2)}</span>
+            <span className="text-gray-900 dark:text-gray-100"><IndianRupee className="inline h-4" />{total.toFixed(2)}</span>
           </div>
         </div>
       </div>
