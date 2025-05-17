@@ -4,7 +4,7 @@ import Image from "next/image"
 import { useCart } from "@/lib/cart-context"
 import { Button } from "@/components/ui/button"
 import QuantitySelector from "@/components/ui/quantity-selector"
-import { Trash2 } from "lucide-react"
+import { Trash2, IndianRupee } from "lucide-react"
 import type { CartItem as CartItemType } from "@/lib/types"
 
 interface CartItemProps {
@@ -27,10 +27,10 @@ export default function CartItem({ item }: CartItemProps) {
       <div className="ml-4 flex flex-1 flex-col">
         <div className="flex justify-between">
           <h3 className="text-base font-medium text-gray-900 dark:text-gray-100">{item.name}</h3>
-          <p className="font-medium text-gray-900 dark:text-gray-100">${(item.price * item.quantity).toFixed(2)}</p>
+          <p className="font-medium text-gray-900 dark:text-gray-100"><IndianRupee className="inline h-4"/>{(item.price * item.quantity).toFixed(2)}</p>
         </div>
 
-        <p className="text-sm text-gray-500 dark:text-gray-400">${item.price.toFixed(2)} each</p>
+        <p className="text-sm text-gray-500 dark:text-gray-400"><IndianRupee className="inline h-4"/>{item.price.toFixed(2)} each</p>
 
         <div className="mt-auto flex items-center justify-between">
           <QuantitySelector quantity={item.quantity} onQuantityChange={handleQuantityChange} min={1} max={10} />
